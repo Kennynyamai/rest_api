@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8080
 
 # Activate the virtual environment and run app.py using Waitress
-CMD ["sh", "-c", "source myenv/bin/activate && waitress-serve --host=0.0.0.0 --port=8080 app:app"]
+CMD ["myenv/bin/python", "-m", "waitress", "--host=0.0.0.0", "--port=8080", "app:app"]
