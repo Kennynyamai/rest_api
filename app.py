@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////rest_api/mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
 
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -83,8 +83,14 @@ def delete_person(user_id):
         return jsonify({'error': str(e)}), 500
 
 
-from waitress import serve
-serve(app, host="0.0.0.0", port=8080)
+def create_app():
+    return app
+
+
+if __name__ == '__main__':
+    # When running this script directly, start the development server
+
+    app.run()
 
 
 
