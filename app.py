@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
-
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# Initialize SQLAlchemy and Migrate
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -83,14 +84,17 @@ def delete_person(user_id):
         return jsonify({'error': str(e)}), 500
 
 
-def create_app():
-    return app
+
 
 
 if __name__ == '__main__':
     # When running this script directly, start the development server
-
-    app.run()
+    from flask_migrate import upgrade
+    with app.app_context():
+        upgrade()
+    # Start the development server
+    app.run(debug=False)
+    
 
 
 
