@@ -81,10 +81,8 @@ def delete_person(user_id):
         return jsonify({'error': str(e)}), 500
 
 
-if __name__ == '__main__':
-    # Create the database tables (if they don't exist)
-    db.create_all()
-    app.run(host='0.0.0.0', port=8080, debug=True)
+from waitress import serve
+serve(app, host="0.0.0.0", port=8080)
 
 
 
