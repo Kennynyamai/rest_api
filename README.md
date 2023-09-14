@@ -16,14 +16,14 @@ A simple Flask-based REST API for CRUD operations on person records.
 3. Create the SQLite database: `python app.py`.
 4. Start the Flask application: `python app.py`.
 
-The API will be available at `[https://kenhngapi.onrender.com]`.
+The API will be available at `https://kenhngapi.onrender.com`.
 
 ## Sample Usage
 
 - Create a person:
 
    ```bash
-   curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe"}' http://localhost:8080/api
+   curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe"}' https://kenhngapi.onrender.com/api
 
 tests - postman
 
