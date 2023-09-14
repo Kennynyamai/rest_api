@@ -1,4 +1,4 @@
-# Flask REST API for Managing Persons
+# Flask REST API for HNG task
 
 A simple Flask-based REST API for CRUD operations on person records.
 
