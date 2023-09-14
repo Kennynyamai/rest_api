@@ -49,7 +49,7 @@ This document provides detailed information on the usage and setup of the Flask 
 
 ### Update Person
 
-- **Endpoint**: `PUT/PATCH /api/{person_id}`
+- **Endpoint**: `PUT /api/{person_id}`
 - **Request Format**: JSON
   - Example Request Body:
     ```json
@@ -93,23 +93,23 @@ This document provides detailed information on the usage and setup of the Flask 
 
 - **Create a Person:**
   ```bash
-  curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe"}' http://localhost:8080/api
+  curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe"}' https://kenhngapi.onrender.com
 
   Get Person Details:
 
 bash
 Copy code
-curl http://localhost:8080/api/1
+curl https://kenhngapi.onrender.com/api/1
 Update Person's Name:
 
 bash
 Copy code
-curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated Name"}' http://localhost:8080/api/1
+curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated Name"}' https://kenhngapi.onrender.com/api/1
 Delete a Person:
 
 bash
 Copy code
-curl -X DELETE http://localhost:8080/api/1
+curl -X DELETE https://kenhngapi.onrender.com/api/1
 Limitations and Assumptions
 The API assumes that person records are identified by unique integer IDs.
 Only the name attribute is required for creating and updating a person record.
@@ -118,4 +118,4 @@ Clone the repository.
 Install dependencies: pip install -r requirements.txt.
 Create the SQLite database: python app.py.
 Start the Flask application: python app.py.
-The API will be available at http://localhost:8080.
+The API will be available at https://kenhngapi.onrender.com
