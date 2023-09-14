@@ -16,7 +16,7 @@ A simple Flask-based REST API for CRUD operations on person records.
 3. Create the SQLite database: `python app.py`.
 4. Start the Flask application: `python app.py`.
 
-The API will be available at `http://localhost:8080`.
+The API will be available at `[https://kenhngapi.onrender.com]`.
 
 ## Sample Usage
 
